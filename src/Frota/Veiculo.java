@@ -5,10 +5,8 @@ import java.io.Serializable;
 public abstract class Veiculo implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private   String marca;
-	private   String modelo;
-	private   int ano;
-	private   int km;	
+	private   String marca, modelo;
+	private   int ano, km;	
 	protected String segmento;
 	protected boolean disponivel;
 	
@@ -21,12 +19,13 @@ public abstract class Veiculo implements Serializable {
 	public String toString() {
 		String retorno = "";
 		retorno += "Marca: "     + this.marca     + "\n";
-		retorno += "Modelo: "    + this.modelo    + " anos\n";
-		retorno += "Ano: "     + this.ano     + "\n";
+		retorno += "Modelo: "    + this.modelo    + "\n";
+		retorno += "Ano: "       + this.ano     + "\n";
+		retorno += "Km: " + this.km + "\n";
 		retorno += "Segmento: "  + this.segmento  + "\n";
 		retorno += "Disponibilade: "  + disponivel()        + "\n";
 					
 		return retorno;
 	}
-	public abstract boolean disponivel();
+	public abstract String disponivel();
 }

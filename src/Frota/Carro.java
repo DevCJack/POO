@@ -1,5 +1,7 @@
 package Frota;
 
+import java.util.Random;
+
 import Frota.Veiculo;
 
 public class Carro extends Veiculo {
@@ -12,6 +14,9 @@ public class Carro extends Veiculo {
 		
 	}
 	@Override
-		public boolean disponivel() {return disponivel;}
+	public String disponivel() {
+		Random disp = new Random();
+		if (disp.nextBoolean() == true) {return "Sim";}
+		else return "Não";}
 	
 }

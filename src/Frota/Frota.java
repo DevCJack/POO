@@ -14,9 +14,8 @@ import javax.swing.JOptionPane;
 public class Frota {
 	private ArrayList<Veiculo> veiculos;
 
-	public Frota() {
-		this.veiculos = new ArrayList<Veiculo>();
-	}
+	public Frota() {this.veiculos = new ArrayList<Veiculo>();}
+	
 	public String[] leValores (String [] dadosIn){
 		String [] dadosOut = new String [dadosIn.length];
 

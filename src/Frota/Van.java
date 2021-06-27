@@ -1,12 +1,12 @@
 package Frota;
 
-import Frota.Veiculo;
+import java.util.Random;
 
 public class Van extends Veiculo {
 	
 	private static final long serialVersionUID = 1L;
 	private int passageiro;
-
+	
 	public Van(String marca, String modelo, int ano, int km, int p) {
 		super(marca, modelo, ano, km);
 		this.segmento = "Transporte";
@@ -14,14 +14,15 @@ public class Van extends Veiculo {
 	}
 	
 	@Override
-	public boolean disponivel() {return disponivel;}
+	public String disponivel() {
+		Random disp = new Random();
+		if (disp.nextBoolean() == true) {return "Sim";}
+		else return "Não";}
 	
 	public int getPassageiro() {return passageiro;}
 	
 
 	public String toString() {
-		return super.toString() + "Passageiros: "+ passageiro +"\n";
+		return super.toString() + "Passageiros: "+ this.passageiro +"\n";
 	}
-	
-
 }
