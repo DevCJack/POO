@@ -23,6 +23,6 @@ public class Van extends Veiculo {
 	
 
 	public String toString() {
-		return super.toString() + "Passageiros: "+ this.passageiro +"\n";
+		return "Categoria Van\n"+super.toString() + "Passageiros: "+ getPassageiro() +"\n";
 	}
 }

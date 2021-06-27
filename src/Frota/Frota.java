@@ -24,22 +24,24 @@ public class Frota {
 
 		return dadosOut;
 	}
+	
 
 	public Carro leCarro (){
 
-		String [] valores = new String [4];
-		String [] nomeVal = {"Marca", "Modelo", "Ano", "Km"};
+		String [] valores = new String [5];
+		String [] nomeVal = {"Marca", "Modelo", "Ano", "Km","Porta-malas"};
 		valores = leValores (nomeVal);
 
 		int ano = this.retornaInteiro(valores[2]);
 		int km = this.retornaInteiro(valores[3]);
+		int pm = this.retornaInteiro(valores[4]);
 
-		Carro carro = new Carro (valores[0],valores[1],ano,km);
+		Carro carro = new Carro (valores[0],valores[1],ano,km,pm);
 		return carro;
 	}
 
 	public Van leVan (){
-
+				
 		String [] valores = new String [5];
 		String [] nomeVal = {"Marca", "Modelo", "Ano", "Km", "Passageiros"};
 		valores = leValores (nomeVal);
@@ -47,10 +49,37 @@ public class Frota {
 		int ano = this.retornaInteiro(valores[2]);
 		int km = this.retornaInteiro(valores[3]);
 		int p = this.retornaInteiro(valores[4]);
-
+		
 		Van van = new Van (valores[0],valores[1],ano,km,p);
-		return van;
-	}
+		return van;	}
+
+	public Onibus leOnibus (){
+		
+		String [] valores = new String [5];
+		String [] nomeVal = {"Marca", "Modelo", "Ano", "Km", "Passageiros"};
+		valores = leValores (nomeVal);
+
+		int ano = this.retornaInteiro(valores[2]);
+		int km = this.retornaInteiro(valores[3]);
+		int p = this.retornaInteiro(valores[4]);
+		
+		Onibus onibus = new Onibus (valores[0],valores[1],ano,km,p);
+		return onibus;	}
+		
+		
+    public CaminhaoFurgao leCaminhaoFurgao (){
+
+        String [] valores = new String [5];
+        String [] nomeVal = {"Marca", "Modelo", "Ano", "Km", "Carga"};
+        valores = leValores (nomeVal);
+
+        int ano = this.retornaInteiro(valores[2]);
+        int km = this.retornaInteiro(valores[3]);
+        double carga = this.retornaInteiro(valores[4]);
+
+        CaminhaoFurgao caminhao = new CaminhaoFurgao (valores[0],valores[1],ano,km, carga);
+        return caminhao;
+    }
 
 	private boolean intValido(String s) {
 		try {
@@ -134,7 +163,7 @@ public class Frota {
 
 		String menu = "";
 		String entrada;
-		int    opc1, opc2;
+		int    opc1, opc2,opc3;
 
 		do {
 			menu = "Controle Frota\n" +
@@ -153,7 +182,8 @@ public class Frota {
 				menu = "Entrada de Segmento de Veículos\n" +
 						"Opções:\n" + 
 						"1. Passeio\n" +
-						"2. Transporte\n";
+						"2. Transporte\n" +
+						"3. Carga";
 
 				entrada = JOptionPane.showInputDialog (menu + "\n\n");
 				opc2 = this.retornaInteiro(entrada);
@@ -161,7 +191,20 @@ public class Frota {
 				switch (opc2){
 				case 1: veiculos.add((Veiculo)leCarro());
 				break;
-				case 2: veiculos.add((Veiculo)leVan());
+				case 2:
+					menu = "Entrada de Segmento de Veículos\n" +
+							"Opções:\n" + 
+							"1. Van\n" +
+							"2. Onibus\n";							
+
+					entrada = JOptionPane.showInputDialog (menu + "\n\n");
+					opc3 = this.retornaInteiro(entrada);
+					switch (opc3) {
+					case 1: veiculos.add((Veiculo)leVan());
+					break;
+					case 2: veiculos.add((Veiculo)leOnibus());}
+					break;
+				case 3: veiculos.add((Veiculo)leCaminhaoFurgao());
 				break;
 				default: 
 					JOptionPane.showMessageDialog(null,"Segmento de veículo para entrada NÃO escolhido!");
