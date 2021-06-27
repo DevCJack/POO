@@ -25,7 +25,7 @@ public abstract class Veiculo implements Serializable {
 		retorno += "Ano: "     + this.ano     + "\n";
 		retorno += "Segmento: "  + this.segmento  + "\n";
 		retorno += "Disponibilade: "  + disponivel()        + "\n";
-		
+					
 		return retorno;
 	}
 	public abstract boolean disponivel();

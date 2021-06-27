@@ -18,10 +18,9 @@ public class Van extends Veiculo {
 	
 	public int getPassageiro() {return passageiro;}
 	
+
 	public String toString() {
-		String retorno = "";
-		retorno += "Passageiros: " + passageiro;
-		return retorno;
+		return super.toString() + "Passageiros: "+ passageiro +"\n";
 	}
 	
 
