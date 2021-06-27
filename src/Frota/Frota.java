@@ -25,7 +25,6 @@ public class Frota {
 		return dadosOut;
 	}
 	
-
 	public Carro leCarro (){
 
 		String [] valores = new String [5];
@@ -65,8 +64,7 @@ public class Frota {
 		
 		Onibus onibus = new Onibus (valores[0],valores[1],ano,km,p);
 		return onibus;	}
-		
-		
+				
     public CaminhaoFurgao leCaminhaoFurgao (){
 
         String [] valores = new String [5];
@@ -89,6 +87,7 @@ public class Frota {
 			return false;
 		}
 	}
+	
 	public int retornaInteiro(String entrada) { // retorna um valor inteiro
 		int numInt;
 
@@ -253,12 +252,7 @@ public class Frota {
 		} while (opc1 != 9);
 	}
 
-
 	public static void main (String [] args){
-
 		Frota frota = new Frota ();
-		frota.menuFrota();
-
-	}
-
+		frota.menuFrota();	}
 }
