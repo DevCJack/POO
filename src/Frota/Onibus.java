@@ -8,7 +8,6 @@ public class Onibus extends Veiculo{
     public Onibus (String marca, String modelo, int ano, int km, int p) {
         super(marca, modelo, ano, km);
         this.passageiro = p;
-        //this.passageiro = getPassageiro();
         this.segmento = "Transporte Coletivo";
     }
 
