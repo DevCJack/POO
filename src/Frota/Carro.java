@@ -21,6 +21,6 @@ public class Carro extends Veiculo {
 		if (disp.nextBoolean() == true) {return "Sim";}
 		else return "Não";}
 	
-	public String toString() { return super.toString() + "Porta-malas: "+ this.portamalas + "litros.\n";}
+	public String toString() { return super.toString() + "Porta-malas: "+ this.portamalas + " litros.\n";}
 	
 }

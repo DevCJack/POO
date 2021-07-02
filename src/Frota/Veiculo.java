@@ -21,7 +21,7 @@ public abstract class Veiculo implements Serializable {
 		retorno += "Marca: "     + this.marca     + "\n";
 		retorno += "Modelo: "    + this.modelo    + "\n";
 		retorno += "Ano: "       + this.ano     + "\n";
-		retorno += "Km: " + this.km + "km.\n";
+		retorno += "Km: " + this.km + " km.\n";
 		retorno += "Segmento: "  + this.segmento  + "\n";
 		retorno += "Disponibilade: "  + disponivel()        + "\n";
 					

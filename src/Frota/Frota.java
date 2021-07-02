@@ -166,7 +166,7 @@ public class Frota {
 		int    opc1, opc2,opc3;
 
 		do {
-			menu = "Controle Frota\n" +
+			menu = "Controle Frota 4.0.\n Software desenvolvido por\n Jackson Cabral e Leonardo Saplak,\n alunos de GTI PUCPR. Turma POO 01\n" +
 					"Opções:\n" + 
 					"1. Cadastrar Veículos\n" +
 					"2. Exibir Veículos\n" +
