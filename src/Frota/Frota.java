@@ -1,5 +1,6 @@
 package Frota;
 import java.io.EOFException;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -7,6 +8,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+
 
 import javax.swing.JOptionPane;
 
@@ -98,11 +100,10 @@ public class Frota {
 		return Integer.parseInt(entrada);
 	}
 
-	public void frotaFileSave (ArrayList<Veiculo> veiculos){
+	public void frotaFileSave (ArrayList<Veiculo> veiculos, String path){
 		ObjectOutputStream outputStream = null;
 		try {
-			outputStream = new ObjectOutputStream 
-					(new FileOutputStream("c:\\temp\\frota.dados"));
+			outputStream = new ObjectOutputStream (new FileOutputStream(path + "\\frota.dados"));
 			for (int i=0; i < veiculos.size(); i++)
 				outputStream.writeObject(veiculos.get(i));
 		} catch (FileNotFoundException ex) {
@@ -234,7 +235,11 @@ public class Frota {
 					JOptionPane.showMessageDialog(null,"Entre com o segmento do veiculo primeiramente");
 					break;
 				}
-				frotaFileSave(veiculos);
+				menu = "Em qual pasta o arquivo será salvo?\n" + "Exemplo: C:\\Temp";
+				String path = JOptionPane.showInputDialog (menu + "\n");
+			    File f1 = new File(path);
+				f1.mkdir();
+				frotaFileSave(veiculos,path);
 				JOptionPane.showMessageDialog(null,"Dados SALVOS com sucesso!");
 				break;
 			case 5: // Recupera Dados
